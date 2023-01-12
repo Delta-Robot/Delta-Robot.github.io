@@ -1,135 +1,176 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Delta</title>
-    <meta name="theme-color" content="#ffffff">
-    <link rel="icon" type="image/png" sizes="300x250" href="https://cdn.discordapp.com/attachments/1035970753901903954/1063034872207245382/38a7f7a2b3ce79e0b74e0bc2f2335b34.png">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  
+  <title>404</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+  
+<style>
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+html {
+  min-height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Inconsolata", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow: 0 0 1ex #33ff33, 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.02;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+  background-size: auto 4px;
+  z-index: 1;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
+  background-repeat: no-repeat;
+  -webkit-animation: scan 7.5s linear 0s infinite;
+          animation: scan 7.5s linear 0s infinite;
+}
+
+@-webkit-keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%, 100% {
+    background-position: 0 100vh;
+  }
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%, 100% {
+    background-position: 0 100vh;
+  }
+}
+.terminal {
+  box-sizing: inherit;
+  position: absolute;
+  height: 100%;
+  width: 1000px;
+  max-width: 100%;
+  padding: 4rem;
+  text-transform: uppercase;
+}
+
+.output {
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.output::before {
+  content: "> ";
+}
+
+/*
+.input {
+  color: rgba(192, 255, 192, 0.8);
+  text-shadow:
+      0 0 1px rgba(51, 255, 51, 0.4),
+      0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.input::before {
+  content: "$ ";
+}
+*/
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a::before {
+  content: "[";
+}
+
+a::after {
+  content: "]";
+}
+
+.errorcode {
+  color: white;
+}
+</style>
+
+  
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
 </head>
 
-<body style="background-color: var(--background);">
-    <div id="top" style="height: 12px;">
-        <nav class="navbar navbar-light navbar-expand fixed-top" style="color: var(--main-color);border-top-width: 6px;border-top-style: solid;background: var(--background);">
-            <div class="container-fluid"><a class="navbar-brand" href="#" style="color: var(--main-color);font-family: 'Alfa Slab One', cursive;">Delta</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div
-                    class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav">
-					    <li class="nav-item"><a class="nav-link active smoothScroll" href="/dashboard" style="color: var(--text-color);">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link active smoothScroll" href="#feature" style="color: var(--text-color);">Features</a></li>
-                        <li class="nav-item"><a class="nav-link smoothScroll" href="#commands" style="color: var(--text-color);">Commands</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://discord.com/api/oauth2/authorize?client_id=1039130541678665728&permissions=8&scope=applications.commands%20bot" style="color: var(--text-color);">Invite</a></li>
-                    </ul>
-            </div>
-    </div>
-    </nav>
-    </div>
-    <header class="d-xl-flex flex-column justify-content-xl-center align-items-xl-center" style="height: 418px;text-align: center;margin: 55px;"><img class="rounded" src="https://cdn.discordapp.com/attachments/1035970753901903954/1063039445709897738/slazzer-edit-image_prev_ui.png" width="150" height="150" style="margin-top: 30px;">
-        <h1 class="d-xl-flex justify-content-xl-start" style="color: var(--text-color);">Delta</h1>
-        <p style="color: var(--secondary-text-color);">A Music & Utility Bot</p>
-        <div class="tada animated"><div role="group" class="btn-group">    <a href="https://discord.com/api/oauth2/authorize?client_id=1039130541678665728&permissions=8&scope=applications.commands%20bot" class="btn btn-primary shadow-none" type="button" style="margin: 5px;background-color: var(--main-color);border-color: var(--main-color);border-radius: 10px;">Invite Me</a>
-	
-	<a class="btn btn-primary smoothScroll shadow-none" role="button" style="margin: 5px;background-color: var(--main-color);border-color: var(--main-color);border-radius: 10px;"
-        href="#feature">Features</a></div></div>
-    </header>
-    <div id="feature" style="height: 90px;background: var(--secondary);"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="var(--background)" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,144C320,128,400,64,480,48C560,32,640,64,720,69.3C800,75,880,53,960,58.7C1040,64,1120,96,1200,96C1280,96,1360,64,1400,48L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg></div></div>
-    <div class="features-boxed" style="background: var(--secondary);">
-        <div class="container" style="color: var(--main-color);">
-            <div class="intro">
-                <h2 class="text-center" style="color: var(--text-color);">Bot Features</h2>
-            </div>
-            <div class="row justify-content-center features">
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div id="features" class="box" style="/*border-radius: 34px;*/"><i class="fa fa-bolt icon" style="color: var(--main-color);"></i>
-                        <h3 class="Fast">Fast</h3>
-                        <p class="description" style="color: var(--secondary-text-color);">Delta's powerful servers are located in European data centers and you can listen to music without wasting time<br></p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div id="features" class="box"><i class="fa fa-lock icon" style="color: var(--main-color);"></i>
-                        <h3 class="name">Secure</h3>
-                        <p class="description" style="color: var(--secondary-text-color);">Delta has designed a secure platform for you with hacker resistant databases.<br></p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div id="features" class="box"><i class="fa fa-smile-o icon" style="color: var(--main-color);"></i>
-                        <h3 class="name">Easy Use</h3>
-                        <p class="description" style="color: var(--secondary-text-color);">Delta has designed a simple and accessible environment and you can use it easily with the slash command<br></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div></div>
-    </div>
-    <div style="background-color: var(--background);"><div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-41.53,-9.56 C167.83,173.98 302.14,-60.89 534.09,89.10 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: var(--secondary);"></path></svg></div></div>
-    <div id="commands">
-        <section>
-            <div class="container-fluid text-white">
-                <div class="row row-cols-3 justify-content-center" style="color: var(--secondary-text-color);">
-                    <div class="col-auto col-md-6 col-lg-4 text-center pb-5 pt-5 number-item love_counter">
-                        <h1 class="love_count" style="font-size: 70px;">5+</h1>
-                        <h4 style="color: var(--main-color);margin-top: -6px;">Team</h4>
-                    </div>
-                    <div class="col-auto col-lg-4 text-center align-self-center pb-5 pt-5 love_counter">
-                        <h1 class="love_count" style="font-size: 70px;">200+</h1>
-                        <h4 style="color: var(--main-color);margin-top: -6px;">Total Members</h4>
-                    </div>
-                </div>
-            </div>
-        </section><div class="container">
-  <h2>Commands</h2>
-  <div class="accordion">
-         
-    <! --- If you want more just copy the following code from here -- >
-          <div class="accordion-item">
-      <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Moderation Commands</span><span class="icon" aria-hidden="true"></span></button>
-      <div class="accordion-content">
-        <p>+help_mod - see all moderation bot comands <br> +ban (user) (reason) - this command for ban users <br> +unban (user) - this command for unban users <br> +kick (user) - this command for kick users <br> +mute (user) (reason) - this command for mute users <br> +unmute (user) - this command for unmute users <br> +hide - this command for hide channels <br> +unhide - this command for unhide channels <br> +lock - this command for lock chat channels <br> +unlock - this command for unlock chat channels <br> +setnick (user) - this command for set nick for users <br> +clear (amount) - this command for clear the messages <br> +giveaway - this command for setup giveaway <br> +reroll (channel) (message id) - this command for reroll giveaway <br> +ticket - this command for send embed ticket <br> +set_welcome_channel (channel) (welcome text) - this command for set welcome channel and set welcome text message <br> +set_goodbye_channel (channel) (text) - this command for set good bye channel and message <br> +reaction (role) (message id) (emoji) - this command for create a new reation role <br> +send (message) - this command for send new message with bot for announcement or reaction role
-      </div>
-    </div>
-    <! --- to here :D -- >
-    <! --- If you want more just copy the following code from here -- >
-          <div class="accordion-item">
-      <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Helpful Commands</span><span class="icon" aria-hidden="true"></span></button>
-      <div class="accordion-content">
-        <p>+help_ful - see all helpful bot comands <br> +avatar (user) - this command for viewing users avatar <br> +invites (user) - this command for viewing total invites users <br> +members - this command for veiwing member count <br> +password - this command for generate a random password for you <br> +skin (player name) - this command for veiwng minecraft player skins <br> +head (player name) - this command for veiwng minecraft player heads
-      </div>
-    </div>
-    <! --- to here :D -- >
-          <div class="accordion-item">
-      <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Fun Commands</span><span class="icon" aria-hidden="true"></span></button>
-      <div class="accordion-content">
-        <p>+help_fun - see all fun bot commands <br> +ProMeasure (user) - This command is for you to find out how pro you ares <br> +NoobMeasure (user) - This command is for you to find out how noob you ares <br> +GayMeasure (user) - This command is for you to find out how Gay you ares <br> +Rick (user) (reason) - This command for Rick roll users <br> +Joke - This command for send a random Joke
-        </p>
-      </div>
-    </div>
+<body translate="no">
+  <div class="noise"></div>
+<div class="overlay"></div>
+<div class="terminal">
+  <h1>Error <span class="errorcode">404</span></h1>
+  <p class="output">The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
+  <p class="output">Please try to <a href="#1">go back</a> or <a href="#2">return to the homepage</a>.</p>
+  <p class="output">Good luck.</p>
+</div>
+  
+  
+  
+  
 
-  </div>
-</div></div>
-    </div>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-550eae0ce567d3d9182e33cee4e187761056020161aa87e3ef74dc467972c555.js"></script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="var(--secondary)" fill-opacity="1" d="M0,160L48,154.7C96,149,192,139,288,154.7C384,171,480,213,576,218.7C672,224,768,192,864,181.3C960,171,1056,181,1152,192C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-    <div class="footer-dark" style="background: var(--secondary);padding-top: 0px;padding-bottom: 0px;">
-        <div class="container">
-            <div class="row">
-                <div class="col item social"><a class="smoothScroll" href="#top"><i class="icon ion-android-arrow-up"></i></a></div>
-            </div>
-            <p class="copyright" style="color: var(--text-color);">DELTA © 2021-2022</p>
-            <p class="copyright" style="color: var(--text-color);padding: 0px;">
 
-        </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Counting.js"></script>
-    <script src="assets/js/untitled.js"></script>
-</body>
 
-</html>
+ 
+</body></html>
